@@ -8,6 +8,8 @@ public class BSTRunner {
 		myBst.addBst(30);
 		myBst.addBst(70);
 		myBst.bstInorder();
+		int size=myBst.getSize();
+		System.out.println("\r\n"+size);
 	}
 
 }

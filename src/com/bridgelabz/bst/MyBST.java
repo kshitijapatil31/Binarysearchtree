@@ -16,12 +16,20 @@ public class MyBST<T extends Comparable> {
 	public void bstInorder() {
 		inorderRec(root);
 	}
-	public void inorderRec(BSTNode root) {
+	public void inorderRec(BSTNode<T> root) {
 		if(root!=null) {
 			inorderRec(root.left);
-			System.out.println(root.data);
+			System.out.print(root.data+"->");
 			inorderRec(root.right);
 		}
+		
+	}
+	
+	public int getSize() {
+		return getSizeRec(root);
+	}
+	public int getSizeRec(BSTNode<T> root){
+		return root==null?0:1+getSizeRec(root.left)+getSizeRec(root.right);
 	}
 	public BSTNode<T> addBstRecursive(BSTNode<T> root, T data) {
 		if (root == null) {
